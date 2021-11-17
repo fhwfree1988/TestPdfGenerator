@@ -1,0 +1,892 @@
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <title>Vitamin Lounge</title>
+    <style>
+        /*-------Header--------*/
+        .header {
+            display: flex;
+            align-items: stretch;
+            height:200px;
+            width:100%;
+        }
+        .headerTitle{
+            height:150px;
+            background-color:#86198F;
+            border-bottom-right-radius: 5rem;
+            flex-grow: 4;
+            text-align: center;
+
+        }
+        .headerTitle span{
+            font-weight: 700;
+            font-size: 3rem;
+            color: #FFFFFF
+        }
+
+        .headerInfo{
+            flex-grow: 3;
+            text-align: right;
+        }
+        .headerLogo{
+            flex-grow: 3;
+        }
+
+
+
+        /*---------Table---------*/
+        .vitamin-table{
+            border-width:1px;
+            width:100%;
+            border: 1px solid #86198F;
+        }
+
+        .vitamin-table thead{
+            background-color:#86198F;
+            color:#FFFFFF;
+            font-weight:700;
+            text-align:center;
+        }
+        .vitamin-table th{
+            padding-bottom:.2rem;
+            padding-top:.2rem;
+        }
+        /*.vitamin-table tr{
+            border-left: 1px solid ##86198F;
+            border-right: 1px solid ##86198F;
+        }*/
+        .vitamin-table td{
+            padding-bottom:0.2rem;
+            padding-top:0.2rem;
+            border-bottom: 1px solid #86198F;
+        }
+        .vitamin-table tr{
+            border-bottom: 1px solid #86198F;
+        }
+        /*.vitamin-table tr.noBottonBorder{
+            border-bottom: 0;
+        }*/
+
+
+        /*.........Radio...........*/
+        .vitamin-radio span.radio{
+            border-radius:9999px;
+            border:1px solid #506161;
+            /*opacity:0.5;*/
+            height:16px;
+            width:16px;
+            /*border: 1px solid black*/
+            position: absolute;
+            display: inline-block
+        }
+
+        .vitamin-radio span.radioinner{
+            border-radius:9999px;
+            height:12px;
+            width:12px;
+            border: 1px solid transparent;
+            left:2px;
+            top:2px;
+            position: absolute;
+            display: inline-block
+        }
+        .vitamin-radio{
+            position:relative;
+            margin:3px;
+            margin-left:10px;
+            vertical-align: middle;
+            text-align: justify;
+        }
+        .vitamin-radio[check="true"] span.radioinner{
+            background-color:#86198F;
+        }
+
+        .vitamin-radio ,.radio-title ,radiogroup-title {
+            display: inline-block;
+        }
+        .radio-title {
+            margin-left:20px;
+            font-size:12px
+        }
+        .radiogroup{
+            vertical-align: middle;
+        }
+        .radiogroup-title{
+            display: inline-block
+        }
+
+
+        /*--------VitaminTitle--------*/
+        .vitamin-title {
+            color: #86198F;
+            font-weight: 700;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            left : 90px;
+            position: relative;
+        }
+        .vitamin-title:before {
+            background-color: #86198F;
+            content: "";
+            height: 10px;
+            position: absolute;
+            top: 5px;
+            left : -90px;
+            width: 80px;
+        }
+
+        /*--------Input---------*/
+        .inputContainer{
+            position: relative;
+            margin-top: 10px;
+            /*display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            flex-direction: row;*/
+            display : block;
+            width:100%;
+            min-width:400px
+        }
+        .inputWrapg{
+            /*flex-grow:1;
+            display: flex;*/
+            display : inline;
+            margin : 10px;
+        }
+        .inputLabel{
+            display : inline;
+        }
+        .input{
+            display : inline;
+            border-bottom : 1px solid #000000;
+            height: 25px;
+            min-height: 25px;
+            width: 100%;
+            min-width: 100px;
+            margin-left : 7px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+
+<header class="header">
+
+    <!-- Start Page Name -->
+    <div class="headerTitle">
+        <span>ANAMNESEBOGEN</span>
+    </div>
+    <!-- End Page Name -->
+
+    <!-- End Logo & Contact info -->
+</header>
+
+<!--////////////// title1/////////-->
+<div class="vitamin-title">
+    <span>ANGABEN ZU IHRER PERSON</span>
+</div>
+
+<!--///////////// Input 1///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.firstname}" >Name*</label>
+        <span class="input" th:text="${saleHistory.firstName}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.lastname}">LastName*</label>
+        <span class="input" th:text="${saleHistory.name}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.title}">Title</label>
+        <span class="input" th:text="${saleHistory.title}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+    </div>
+</div>
+<br/>
+
+<!--///////////// Input 2///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.street}">Street*</label>
+        <span class="input" th:text="${saleHistory.street}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+</div>
+<br/>
+
+
+<!--///////////// Input 3///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel">Hausnummer*</label>
+        <span class="input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 4///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.postcodeCity}">PostCodeCity*</label>
+        <span class="input" th:text="${saleHistory.postcodeCity}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 5///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.city}" >City</label>
+        <span class="input" th:text="${saleHistory.city}" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.phone}">Phone</label>
+        <span class="input" th:text="${saleHistory.phone}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 6///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.email}">Email</label>
+        <span class="input" th:text="${saleHistory.email}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 7///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel">Geb.-Datum*</label>
+        <span class="input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 8///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.height}">Height*(in cm)</label>
+        <span class="input" th:text="${saleHistory.height}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="inputWrapg">
+        <label class="inputLabel" th:text="#{docusign.History.weight}">Weight*(in kg)</label>
+        <span class="input" th:text="${saleHistory.weight}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<!--///////////// Input 9///////////-->
+<div class="inputContainer">
+    <div class="inputWrapg">
+        <label class="inputLabel">Medikamente/Dosierung</label>
+        <span class="input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+
+</div>
+<br/>
+
+<div class="radiogroup">
+    <span class="radiogroup-title">Geschlecht*</span>
+    <label class="vitamin-radio" th:attr="check=${#strings.equalsIgnoreCase(saleHistory.gender, 'MALE')}" >
+        <span class="radio" value="men" name="sex"></span>
+        <span class="radioinner" value="men" name="sex"></span>
+        <span class="radio-title" th:text="#{docusign.History.male}">Male</span>
+    </label>
+
+    <label class="vitamin-radio " th:attr="check=${#strings.equalsIgnoreCase(saleHistory.gender, 'FEMALE')}">
+        <span class="radio" value="women" name="sex"></span>
+        <span class="radioinner" value="women" name="sex"></span>
+        <span class="radio-title" th:text="#{docusign.History.female}">Female</span>
+    </label>
+</div>
+<br/>
+
+
+<!--////////////// title 2/////////-->
+<div class="vitamin-title">
+    <span>BITTE ZUTREFF ENDES ANKREUZEN</span>
+</div>
+
+<!-- /////////////////////////// table 1/////////////////////-->
+<table class="vitamin-table">
+    <thead>
+    <tr>
+        <th colspan="3" th:text="#{docusign.History.table1}">GENERAL PHYSICAL COMPLAINTS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.generalFatigue}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.generalFatigue}">General Fatigue</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.sweating}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.sweating}">Sweats</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.allergies}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.allergies}">Allergies</span>
+            </label>
+        </td>
+    </tr>
+    <tr class="BottonBorder">
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.weaknessOfConnectiveTissue}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.weaknessOfConnectiveTissue}">Connective tissue weakness</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.edema}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.edema}">Edema</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.drySkin}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.drySkin}">Dry skin</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio"  th:attr="check=${saleHistory.autoimmuneDisease}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title"  th:text="#{docusign.History.autoimmuneDisease}">Autoimmunerkrankung</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.osteoporosis}"  >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.osteoporosis}">Osteoporose</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.infectionAndInflammationTendency}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.infectionAndInflammationTendency}">InfectionAndInflammationTendency</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.diabetesMellitus}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.diabetesMellitus}">DiabetesMellitus</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.irritableBowel}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.irritableBowel}">Reizdarm</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.cravings}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.cravings}">FoodCravings </span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.weightGain}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.weightGain}">WeightGain</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.jointProblems}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.jointProblems}">JointProblems</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.otherGeneralPhysicalComplaints}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.otherGeneralPhysicalComplaints}">Sonstiges</span>
+            </label>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<p style="page-break-after: always;">&nbsp;</p>
+
+<!-- /////////////////////////// table 2/////////////////////-->
+<table class="vitamin-table">
+    <thead>
+    <tr>
+        <th colspan="3" th:text="#{docusign.History.table2}">GENERAL PHYSICAL COMPLAINTS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.emotionalStress}">
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.emotionalStress}">EmotionalStress</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.lackOfConcentration}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.lackOfConcentration}">LackOfConcentration</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.burnout}">
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.burnout}">Burnout</span>
+            </label>
+        </td>
+    </tr>
+    <tr class="BottonBorder">
+        <td>
+            <label class="vitamin-radio"  th:attr="check=${saleHistory.depression}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.depression}">Depression</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio"  th:attr="check=${saleHistory.nervousness}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.nervousness}">Nervousness</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio"  th:attr="check=${saleHistory.panicAttacks}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.panicAttacks}">PanicAttacks</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.moodSwings}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.moodSwings}">MoodSwings</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.adsAdhd}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.adsAdhd}">AdsAdhd</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.sleepDisorders}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.sleepDisorders}">SleepDisorders</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.chronicFatigue}">
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.chronicFatigue}">ChronicFatigue</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.sensitivityToLightAndSound}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.sensitivityToLightAndSound}">SensitivityToLightAndSound</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.aggression}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.aggression}">Aggression</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.memoryDisorders}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.memoryDisorders}">MemoryDisorders</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.otherMentalComplaints}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.otherMentalComplaints}">OtherMentalComplaints</span>
+            </label>
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<p style="page-break-after: always;">&nbsp;</p>
+
+    <!-- /////////////////////////// table 3/////////////////////-->
+    <table class="vitamin-table">
+        <thead>
+        <tr>
+            <th colspan="3" th:text="#{docusign.History.table3}">GENERAL CLINICAL COMPLAINTS</th>
+        </tr>
+        </thead>
+        <tbody>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.highInProtein}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.highInProtein}">HighInProtein</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.richInVitamins}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.richInVitamins}">richInVitamins</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.vegetarianVegan}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.vegetarianVegan}">VegetarianVegan</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.highInFat}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.highInFat}">HighInFat</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.nutritionOther}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.nutritionOther}">NutritionOther</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.noExtraordinaryStress}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.noExtraordinaryStress}">NoExtraordinaryStress</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.psychologicalStress}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.psychologicalStress}">PsychologicalStress</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.physicalStress}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.physicalStress}">PhysicalStress</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.noSport}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.noSport}">NoSport</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.occasionalSport}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.occasionalSport}">OccasionalSport</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.dailySport}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.dailySport}">DailySport</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.sports}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.sports}">Sports</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.nonSmoker}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.nonSmoker}">NonSmoker</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.smoker}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.smoker}">Smoker</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.noPleasure}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.noPleasure}">NoPleasure</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.occasionalUse}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.occasionalUse}">OccasionalUse</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.regularUse}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.regularUse}">RegularUse</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.unfulfilledDesireToHaveChildren}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.unfulfilledDesireToHaveChildren}">DesireToHaveChildren</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.pms}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.pms}">pms</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.hotFlashes}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.hotFlashes}">HotFlashes</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.lossOfLibido}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.lossOfLibido}">LossOfLibido</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.breastSensitivity}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.breastSensitivity}">BreastSensitivity</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.heavyMenstruation}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.heavyMenstruation}">HeavyMenstruation</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.irregularCycle}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.irregularCycle}">IrregularCycle</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.dryMucousMembranes}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.dryMucousMembranes}">DryMucousMembranes</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.cellulitis}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.cellulitis}">Cellulitis</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.especiallyForWomenHairLoss}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.especiallyForWomenHairLoss}">EspeciallyForWomenHairLoss</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.premenstrualMigraine}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.premenstrualMigraine}">PremenstrualMigraine</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.especiallyForWomenOther}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.especiallyForWomenOther}">EspeciallyForWomenOther</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.erectileDysfunction}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.erectileDysfunction}">ErectileDysfunction</span>
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.potencyDisorder}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.potencyDisorder}">PotencyDisorder</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.especiallyForMenHairLoss}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.especiallyForMenHairLoss}">EspeciallyForMenHairLoss</span>
+            </label>
+        </td>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.prostateComplaints}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.prostateComplaints}">ProstateComplaints</span>
+            </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label class="vitamin-radio" th:attr="check=${saleHistory.especiallyForMenOther}" >
+                <span class="radio" value="men" name="sex"></span>
+                <span class="radioinner" value="men" name="sex"></span>
+                <span class="radio-title" th:text="#{docusign.History.especiallyForMenOther}">EspeciallyForMenOther</span>
+            </label>
+        </td>
+        <td>
+
+        </td>
+        <td>
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--////////////// title 3/////////-->
+<div class="vitamin-title">
+    <span>EINVERSTÄNDNISERKLÄRUNG</span>
+</div>
+
+<br/>
+<p class="text-justify">
+    Als Selbstzahler möchte ich die gesamten Leistungen der Praxis Dr. mit Spitzbart als individuelle Gesundheitsleistungen in Anspruch
+    nehmen. Mir ist bekannt, dass es sich bei den gewünschten Leistungen unter anderem auch um Vorsorgeleistungen handelt, die nicht
+    Bestandteil der vertragsärztlichen Versorgung sind. Der Kostenrahmen variert je nach Beschwerdebild und Untersuchungsaufwand.
+    Hiermit bestätige ich, die AGB sowie das Widerrufsrecht wie auf www.vitamin-lounge.com angeführt, zur Kenntnis genommen zu haben
+    und diese zu akzeptieren.
+    <br>
+    <br>
+    Ich habe gegenüber meiner Krankenkasse und/oder anderen Kostenerstattungsstellen keinen Anspruch auf Kostenübernahme, weder
+    ganz oder teilweise.
+    <br>
+    <br>
+    Des Weiteren erkläre ich mich damit einverstanden, dass meine personenbezogenen Daten (DSGVO) gespeichert werden. Hierüber
+    wurde ich von meinen/er Arzt/Ärztin bzw.meinen/r Therapeuten/in aufgeklärt.
+</p>
+
+
+
+
+
+
+
+
+</body>
+</html>
