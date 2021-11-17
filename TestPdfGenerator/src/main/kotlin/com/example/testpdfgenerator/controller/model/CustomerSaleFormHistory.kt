@@ -18,7 +18,7 @@ data class CustomerSaleFormHistory(
         var saleId: Long? = 1,
 
 
-        var companyName: String? = "Austria",
+        var companyName: String? = "MyCompanie",
 
 
         var vatNo: String? = "adadsas",
@@ -32,35 +32,35 @@ data class CustomerSaleFormHistory(
         var birthday: ZonedDateTime? = ZonedDateTime.now(),
 
 
-        var name: String? = "Dnnnnn",
+        var name: String? = "WE Dnnnnn",
 
 
         var firstName: String? = "Dni WEEEE",
 
-        var title: String? = "Title",
+        var title: String? = "My Name",
 
 
         var street: String? = "Street 63529. jhg",
 
 
-        var postcodeCity: String? = "SDSD",
+        var postcodeCity: String? = "765757576",
 
 
-        var country: String? = "Ger",
+        var country: String? = "Germany",
 
 
-        var phone: String? = null,
+        var phone: String? = "+437868687687",
 
 
-        var email: String? = null,
+        var email: String? = "Dani.H.1988@gmail.com",
 
 
-        var height: String? = null,
+        var height: String? = "167 cm",
 
 
-        var weight: String? = null,
+        var weight: String? = "85 kg",
 
-        var medicationDosage: String? = null,
+        var medicationDosage: String? = " ASP / 136g",
 
 
         var generalFatigue: Boolean? = true,
@@ -80,7 +80,7 @@ data class CustomerSaleFormHistory(
         var drySkin: Boolean? = true,
 
 
-        var autoimmuneDisease: Boolean? = null,
+        var autoimmuneDisease: Boolean? = true,
 
 
         var osteoporosis: Boolean? = null,
@@ -90,7 +90,7 @@ data class CustomerSaleFormHistory(
 
         var diabetesMellitus: Boolean? = null,
 
-        var irritableBowel: Boolean? = null,
+        var irritableBowel: Boolean? = true,
 
 
         var cravings: Boolean? = null,
@@ -110,13 +110,13 @@ data class CustomerSaleFormHistory(
         var lackOfConcentration: Boolean? = null,
 
 
-        var burnout: Boolean? = null,
+        var burnout: Boolean? = true,
 
 
         var depression: Boolean? = null,
 
 
-        var nervousness: Boolean? = null,
+        var nervousness: Boolean? = true,
 
 
         var panicAttacks: Boolean? = null,
@@ -128,7 +128,7 @@ data class CustomerSaleFormHistory(
         var adsAdhd: Boolean? = null,
 
 
-        var sleepDisorders: Boolean? = null,
+        var sleepDisorders: Boolean? = true,
 
         var chronicFatigue: Boolean? = null,
 
@@ -144,7 +144,7 @@ data class CustomerSaleFormHistory(
 
         var otherMentalComplaints: Boolean? = null,
 
-        var highInProtein: Boolean? = null,
+        var highInProtein: Boolean? = true,
 
 
         var richInVitamins: Boolean? = null,
@@ -164,7 +164,7 @@ data class CustomerSaleFormHistory(
         var psychologicalStress: Boolean? = null,
 
 
-        var physicalStress: Boolean? = null,
+        var physicalStress: Boolean? = true,
 
 
         var noSport: Boolean? = null,
@@ -188,7 +188,7 @@ data class CustomerSaleFormHistory(
         var noPleasure: Boolean? = null,
 
 
-        var occasionalUse: Boolean? = null,
+        var occasionalUse: Boolean? = true,
 
 
         var regularUse: Boolean? = null,
@@ -206,7 +206,7 @@ data class CustomerSaleFormHistory(
         var lossOfLibido: Boolean? = null,
 
 
-        var breastSensitivity: Boolean? = null,
+        var breastSensitivity: Boolean? = true,
 
 
         var heavyMenstruation: Boolean? = null,
@@ -224,7 +224,7 @@ data class CustomerSaleFormHistory(
         var especiallyForWomenHairLoss: Boolean? = null,
 
 
-        var premenstrualMigraine: Boolean? = null,
+        var premenstrualMigraine: Boolean? = true,
 
 
         var especiallyForWomenOther: Boolean? = null,
