@@ -4,64 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49652f83-17da-4712-a449-08287158bf83" name="Default Changelist" comment="" />
+    <list default="true" id="56b02fea-d4c5-4441-8a62-9dbda5e12f91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/kotlin/com/example/testpdfgenerator/TestPdfGeneratorApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/kotlin/com/example/testpdfgenerator/controller/TestPDFController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/kotlin/com/example/testpdfgenerator/controller/config/config.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/kotlin/com/example/testpdfgenerator/controller/model/CustomerSaleFormHistory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/kotlin/com/example/testpdfgenerator/controller/service/TestPDF.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/messages.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/messages_de.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/messages_en.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/assets/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/assets/images/logo_1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/assets/images/logo_2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/assets/images/logo_3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/mytest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/mytest1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/main/resources/templates/vitamin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestPdfGenerator/src/test/kotlin/com/example/testpdfgenerator/TestPdfGeneratorApplicationTests.kt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Kotlin Class" />
-        <option value="HTML File" />
-      </list>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Foad.Z\.m2\wrapper\dists\apache-maven-3.8.3-bin\5a6n1u8or3307vo2u2jgmkhm0t\apache-maven-3.8.3" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="20r1w8C3Q9GFp3jYwjooqvgQ0gd" />
+  <component name="ProjectId" id="213eZwDIBHI6un4s8jD5XIOicSA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../FHTutorials" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Foad\MyJobs\TestPdfGenerator\src\main\resources\templates" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.example.controller" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.pdfGenerator.service" />
-      <recent name="com.pdfGenerator" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestPdfGeneratorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TestPdfGenerator" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.testpdfgenerator.TestPdfGeneratorApplication" />
@@ -73,49 +75,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="49652f83-17da-4712-a449-08287158bf83" name="Default Changelist" comment="" />
-      <created>1636788131418</created>
+      <changelist id="56b02fea-d4c5-4441-8a62-9dbda5e12f91" name="Default Changelist" comment="" />
+      <created>1637174259004</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1636788131418</updated>
-      <workItem from="1636788133444" duration="32000" />
-      <workItem from="1636788194200" duration="21711000" />
-      <workItem from="1636962638494" duration="2537000" />
+      <updated>1637174259004</updated>
+      <workItem from="1637174260107" duration="357000" />
+      <workItem from="1637174764535" duration="1697000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/testpdfgenerator/controller/TestPDFController.kt</url>
-          <line>17</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/testpdfgenerator/controller/service/TestPDF.kt</url>
-          <line>26</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/testpdfgenerator/controller/service/TestPDF.kt</url>
-          <line>34</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/testpdfgenerator/controller/service/TestPDF.kt</url>
-          <line>67</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/example/testpdfgenerator/controller/service/TestPDF.kt</url>
-          <line>70</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
